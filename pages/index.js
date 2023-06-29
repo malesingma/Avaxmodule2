@@ -59,17 +59,17 @@ export default function HomePage() {
     }
   }
 
-  const deposit = async() => {
+  const summultiples = async() => {
     if (atm) {
-      let tx = await atm.deposit(1);
+      let tx = await atm.multiples(5,3);
       await tx.wait()
       getBalance();
     }
   }
 
-  const withdraw = async() => {
+  const sumoddeven = async() => {
     if (atm) {
-      let tx = await atm.withdraw(1);
+      let tx = await atm.oddeven(41);
       await tx.wait()
       getBalance();
     }
@@ -94,8 +94,8 @@ export default function HomePage() {
       <div>
         <p>Your Account: {account}</p>
         <p>Your Balance: {balance}</p>
-        <button onClick={deposit}>Deposit 1 ETH</button>
-        <button onClick={withdraw}>Withdraw 1 ETH</button>
+        <button onClick={summultiples}>Sum of multiples</button>
+        <button onClick={sumoddeven}>Sum of 5 odd or even numbers</button>
       </div>
     )
   }
@@ -104,7 +104,7 @@ export default function HomePage() {
 
   return (
     <main className="container">
-      <header><h1>Welcome to the Metacrafters ATM!</h1></header>
+      <header><h1>Maths</h1></header>
       {initUser()}
       <style jsx>{`
         .container {
